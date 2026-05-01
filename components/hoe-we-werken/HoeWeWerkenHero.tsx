@@ -1,109 +1,110 @@
 import Image from "next/image";
 
-// ─── Update quotes here ───────────────────────────────────────────────────────
-const roles = [
+const blocks = [
   {
-    id: "guide",
-    name: "Orvia Guide",
-    bg: "bg-orvia-lime",
-    textColor: "text-orvia-dark",
-    dividerColor: "bg-orvia-dark",
-    image: "/images/hww-guide.png",
-    tagline: "Een expert die zijn kennis, visie en netwerk inbrengt in de beweging.",
-    description:
-      "Je stelt de vragen die anderen vermijden. Je geeft feedback die iemand vooruit helpt, ook als dat ongemakkelijk voelt. Niet als mentor die bevestigt, maar als gids die durft.",
-    quote: "«Placeholder quote voor Orvia Guide»",
+    id: "ontzorging",
+    imageRight: true,
+    image: "/images/hww-ontzorging.png",
+    heading: "Ontzorging geeft performance.",
+    body: (
+      <>
+        <p className="mb-6">
+          People management vreet energie die je nodig hebt voor strategie en
+          groei. Coaching, ontwikkeling, moeilijke gesprekken: wij nemen het
+          over. Maar ontzorging betekent voor ons niet dat we problemen
+          wegstoppen.{" "}
+          <strong>
+            We voeren de gesprekken die jij niet altijd kan of wil voeren. We
+            stellen verwachtingen waar anderen dat niet durven.
+          </strong>
+        </p>
+        <p>
+          Het resultaat? Een team dat presteert omdat het weet waar het aan
+          toe is.
+        </p>
+      </>
+    ),
   },
   {
-    id: "talent",
-    name: "Orvia Talent",
-    bg: "bg-orvia-blue",
-    textColor: "text-orvia-dark",
-    dividerColor: "bg-orvia-dark",
-    image: "/images/hww-talent.png",
-    tagline: "Een professional die zijn carrière uitbouwt op basis van impact, groei en slimme inzetbaarheid.",
-    description:
-      "Je kiest bewust voor beweging. Je werkt waar je het meeste bijdraagt en wordt scherper door elke context. Orvia begeleidt die keuzes: eerlijk, direct en met oog voor wie je wil worden.",
-    quote: "Je moet er niet bij horen, je moet iets bijdragen.",
+    id: "qlabel",
+    imageRight: false,
+    image: "/images/hww-qlabel.png",
+    heading: "Het Q-label geeft zekerheid.",
+    body: (
+      <>
+        <p className="mb-6">
+          Elk Orvia-talent doorloopt ons Quality Label en wordt continu
+          begeleid op skillset, mindset en ecosysteemfit. Ze groeien binnen
+          een sterk programma en een actieve community.
+        </p>
+        <p>
+          <strong>
+            Het Q-label is geen sticker na een intakegesprek, het is een
+            doorlopend proces.
+          </strong>{" "}
+          Talent dat bij jou binnenkomt, heeft al bewezen dat het beweegt,
+          leert en impact maakt. Je weet wat je krijgt. Niet op basis van een
+          cv, maar op basis van bewezen groei.
+        </p>
+      </>
+    ),
   },
   {
-    id: "client",
-    name: "Orvia Client",
-    bg: "bg-orvia-dark",
-    textColor: "text-white",
-    dividerColor: "bg-white",
-    image: "/images/hww-client.png",
-    tagline: "Een organisatie die bewust kiest voor gekwalificeerd Orvia-talent om wendbaarheid waar te maken.",
-    description:
-      "Je krijgt toegang tot professionals die al geselecteerd, begeleid en gegroeid zijn. Wij denken mee over inzetbaarheid, niet alleen over invulling. En we spreken je aan op performance, niet op tevredenheid.",
-    quote: "«Placeholder quote voor Orvia Client»",
-  },
-  {
-    id: "driver",
-    name: "Orvia Driver",
-    bg: "bg-orvia-cream",
-    textColor: "text-orvia-dark",
-    dividerColor: "bg-orvia-dark",
-    image: "/images/hww-driver.png",
-    tagline: "Een medewerker van Orvia of één van haar dochters die de beweging vanuit overtuiging in de wereld brengt.",
-    description:
-      "Je bent geen uitvoerder van een strategie. Je bent mede-eigenaar van een beweging. Je verbindt talent met organisaties en bouwt mee aan iets wat nog volop in ontwikkeling is.",
-    quote: "«Placeholder quote voor Orvia Driver»",
+    id: "flexibiliteit",
+    imageRight: true,
+    image: "/images/hww-flexibiliteit.png",
+    heading: "Flexibiliteit geeft vrijheid.",
+    body: (
+      <>
+        <p className="mb-6">
+          Meer talent nodig? We schalen op. Minder? We schalen af. Ander
+          profiel nodig? We vervangen. Geen ontslagtrauma, geen slepende
+          gesprekken.{" "}
+          <strong>
+            Wie niet flexibel kan schakelen met talent, zit gevangen in zijn
+            eigen structuur. Wie dat wel kan, beweegt mee met wat de business
+            vraagt.
+          </strong>
+        </p>
+        <p>Jij schakelt wanneer de business dat vraagt.</p>
+      </>
+    ),
   },
 ];
-// ─────────────────────────────────────────────────────────────────────────────
-
-function RoleCard({ role }: { role: (typeof roles)[0] }) {
-  return (
-    // `group` enables CSS-only hover — no client directive needed
-    <div className={`${role.bg} flex flex-col group`}>
-      {/* Photo — inset from card edges so the bg colour shows as a frame */}
-      <div className="mx-7 mt-7 lg:mx-[35px] lg:mt-[30px]">
-        <div className="relative w-full aspect-[565/377] overflow-hidden">
-          <Image
-            src={role.image}
-            alt={role.name}
-            fill
-            className="object-cover"
-            sizes="(max-width: 640px) 100vw, 50vw"
-          />
-          {/* Hover overlay — glass/blur effect, appears on card hover */}
-          <div className="absolute inset-0 flex items-center justify-center px-8 backdrop-blur-md bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <p className="font-heading font-bold text-white text-[18px] md:text-[22px] lg:text-[26px] leading-[1.25] text-center drop-shadow-sm">
-              {role.quote}
-            </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Text */}
-      <div className="p-6 lg:p-[29px] flex-1 flex flex-col">
-        <p className={`font-display font-bold text-[15px] lg:text-[16px] tracking-[1.12px] ${role.textColor} mb-2`}>
-          {role.name}
-        </p>
-        <div className={`h-px ${role.dividerColor} mb-4`} />
-        <p className={`font-display font-bold text-[13px] lg:text-[14px] leading-[1.6] tracking-[0.28px] ${role.textColor} mb-2`}>
-          {role.tagline}
-        </p>
-        <p className={`font-display text-[13px] lg:text-[14px] leading-[1.6] tracking-[0.28px] ${role.textColor}`}>
-          {role.description}
-        </p>
-      </div>
-    </div>
-  );
-}
 
 export default function HoeWeWerkenHero() {
   return (
-    <section className="bg-white px-5 md:px-10 lg:px-[75px] pt-[96px] md:pt-[120px] lg:pt-[160px] pb-0">
-      <h1 className="font-heading font-bold text-orvia-dark text-[28px] md:text-[34px] lg:text-[40px] leading-[1.35] mb-6 md:mb-8 lg:mb-10 max-w-[1290px] mx-auto">
-        Welkom in de beweging.
-      </h1>
+    <section className="bg-white section-padding pt-[96px] md:pt-[120px] lg:pt-[180px] pb-0">
+      <div className="max-w-[1290px] mx-auto space-y-10 md:space-y-12 lg:space-y-[56px]">
+        {blocks.map((block) => (
+          <div
+            key={block.id}
+            className={`flex flex-col gap-8 lg:gap-10 lg:items-start ${
+              block.imageRight ? "lg:flex-row" : "lg:flex-row-reverse"
+            }`}
+          >
+            {/* Text */}
+            <div className="lg:flex-1">
+              <h1 className="font-heading font-bold text-orvia-dark text-[28px] md:text-[34px] lg:text-[40px] leading-[1.35] mb-6 lg:max-w-[440px]">
+                {block.heading}
+              </h1>
+              <div className="font-display text-orvia-dark text-[15px] lg:text-[16px] leading-[1.5] tracking-[0.8px] [&_strong]:font-bold">
+                {block.body}
+              </div>
+            </div>
 
-      {/* gap-6 = 24px — matches Figma's ~24–25px inter-card spacing */}
-      <div className="max-w-[1290px] mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-        {roles.map((role) => (
-          <RoleCard key={role.id} role={role} />
+            {/* Image */}
+            <div className="lg:flex-1 relative aspect-[565/325] overflow-hidden">
+              <Image
+                src={block.image}
+                alt=""
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority={block.id === "ontzorging"}
+              />
+            </div>
+          </div>
         ))}
       </div>
     </section>

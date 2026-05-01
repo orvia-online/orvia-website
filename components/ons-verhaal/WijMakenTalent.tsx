@@ -2,9 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { partnerUrl } from "@/lib/partners";
 
-export default function WijMakenTalent() {
+interface WijMakenTalentProps {
+  bg?: string;
+  source?: string;
+}
+
+export default function WijMakenTalent({ bg = "bg-orvia-cream", source = "ons-verhaal" }: WijMakenTalentProps) {
   return (
-    <section className="bg-orvia-cream px-5 md:px-10 lg:px-[75px] pt-12 md:pt-16 lg:pt-20 pb-12 md:pb-16 lg:pb-20">
+    <section className={`${bg} section-padding pt-12 md:pt-16 lg:pt-[108px] pb-12 md:pb-16 lg:pb-[67px]`}>
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16 max-w-[1290px] mx-auto">
 
         {/* Text column */}
@@ -17,11 +22,11 @@ export default function WijMakenTalent() {
           </p>
           <p className="font-display text-orvia-dark text-[15px] lg:text-[16px] tracking-[0.8px] leading-relaxed max-w-[578px]">
             <span className="font-bold">Orvia is de beweging boven </span>
-            <a href={partnerUrl("planet-talent", "ons-verhaal-inline")} target="_blank" rel="noopener noreferrer" className="font-bold hover:opacity-70 transition-opacity">
+            <a href={partnerUrl("planet-talent", `${source}-inline`)} target="_blank" rel="noopener noreferrer" className="font-bold hover:opacity-70 transition-opacity">
               Planet Talent
             </a>
             <span className="font-bold"> en </span>
-            <a href={partnerUrl("fin-forward", "ons-verhaal-inline")} target="_blank" rel="noopener noreferrer" className="font-bold hover:opacity-70 transition-opacity">
+            <a href={partnerUrl("fin-forward", `${source}-inline`)} target="_blank" rel="noopener noreferrer" className="font-bold hover:opacity-70 transition-opacity">
               Fin Forward
             </a>
             <span className="font-bold">.</span>
@@ -30,11 +35,11 @@ export default function WijMakenTalent() {
               ecosysteem
             </Link>
             {" "}waar talent en ambitieuze organisaties elkaar vinden, versterken en verder bewegen.{" "}
-            <a href={partnerUrl("planet-talent", "ons-verhaal-inline")} target="_blank" rel="noopener noreferrer" className="text-[#ec612c] underline hover:opacity-70 transition-opacity">
+            <a href={partnerUrl("planet-talent", `${source}-inline`)} target="_blank" rel="noopener noreferrer" className="text-[#ec612c] underline hover:opacity-70 transition-opacity">
               Planet Talent
             </a>
             {" "}brengt digitaal talent voor transformatie en verjonging.{" "}
-            <a href={partnerUrl("fin-forward", "ons-verhaal-inline")} target="_blank" rel="noopener noreferrer" className="text-[#ec612c] underline hover:opacity-70 transition-opacity">
+            <a href={partnerUrl("fin-forward", `${source}-inline`)} target="_blank" rel="noopener noreferrer" className="text-[#ec612c] underline hover:opacity-70 transition-opacity">
               Fin Forward
             </a>
             {" "}levert financiële expertise voor continuïteit en versterking. Beiden delen dezelfde overtuiging: dat het anders en beter kan.
@@ -42,7 +47,7 @@ export default function WijMakenTalent() {
         </div>
 
         {/* Logos + CTAs column */}
-        <div className="w-full lg:w-auto lg:flex-shrink-0 flex flex-col gap-8 lg:gap-10 lg:pt-4">
+        <div className="w-full lg:w-auto lg:flex-shrink-0 flex flex-col gap-8 lg:gap-[84px] lg:pt-[67px]">
           {/* Planet Talent */}
           <div className="flex items-center gap-5">
             <div className="relative w-[180px] md:w-[220px] lg:w-[236px] h-[60px] md:h-[70px] lg:h-[82px] flex-shrink-0">
@@ -50,10 +55,11 @@ export default function WijMakenTalent() {
                 src="/images/logo-planet-talent.svg"
                 alt="Planet Talent"
                 fill
+                sizes="(max-width: 768px) 180px, (max-width: 1024px) 220px, 236px"
                 className="object-contain object-left"
               />
             </div>
-            <a href={partnerUrl("planet-talent", "ons-verhaal-partner-cta")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity whitespace-nowrap">
+            <a href={partnerUrl("planet-talent", `${source}-partner-cta`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity whitespace-nowrap">
               <span className="h-12 bg-[#f8cd41] rounded-full flex items-center pl-5 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark">
                 Planet Talent
               </span>
@@ -72,10 +78,11 @@ export default function WijMakenTalent() {
                 src="/images/logo-fin-forward.svg"
                 alt="Fin Forward"
                 fill
+                sizes="(max-width: 768px) 180px, (max-width: 1024px) 220px, 236px"
                 className="object-contain object-left"
               />
             </div>
-            <a href={partnerUrl("fin-forward", "ons-verhaal-partner-cta")} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity whitespace-nowrap">
+            <a href={partnerUrl("fin-forward", `${source}-partner-cta`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity whitespace-nowrap">
               <span className="h-12 bg-[#ec612c] rounded-full flex items-center pl-5 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark">
                 Fin Forward
               </span>

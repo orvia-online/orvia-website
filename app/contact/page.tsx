@@ -7,6 +7,8 @@ import ContactContent from "@/components/contact/ContactContent";
 
 export const metadata: Metadata = {
   title: "Contact — Orvia",
+  description:
+    "Klaar voor een eerlijk gesprek? Neem contact op met Orvia in Temse voor advies over talent, people management en flexibele inzet.",
 };
 
 export default function ContactPage() {

@@ -1,80 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const roles = [
+const cards = [
   {
-    id: "guide",
-    name: "Orvia Guide",
-    bg: "bg-orvia-lime",
-    textColor: "text-orvia-dark",
-    dividerColor: "bg-orvia-dark",
-    image: "/images/role-guide.png",
-    description:
-      "Een expert die zijn kennis, visie en netwerk inbrengt in de beweging en zo bijdraagt aan de groei van talent en organisaties.",
-    hoverQuote: "«Placeholder quote voor Orvia Guide»",
+    id: "ontzorging",
+    icon: "/images/icon-card-ontzorging.svg",
+    title: "Ontzorging geeft performance",
+    body: "People management vreet energie die je nodig hebt voor strategie en groei. Coaching, ontwikkeling, moeilijke gesprekken: wij nemen het over. Jij geeft richting en boekt resultaten.",
+    boldLine: "Wij het peoplemanagement. Jij de performance.",
   },
   {
-    id: "talent",
-    name: "Orvia Talent",
-    bg: "bg-orvia-blue",
-    textColor: "text-orvia-dark",
-    dividerColor: "bg-orvia-dark",
-    image: "/images/role-talent.png",
-    description:
-      "Een professional die navigeert binnen het Orvia-ecosysteem en zijn carrière uitbouwt op basis van impact, groei en slimme inzetbaarheid.",
-    hoverQuote: "«Placeholder quote voor Orvia Talent»",
+    id: "qlabel",
+    icon: "/images/icon-card-qlabel.svg",
+    title: "Het Q-label geeft zekerheid",
+    body: "Elk Orvia-talent doorloopt ons Quality Label en wordt continu begeleid op skillset, mindset en ecosysteemfit. Ze groeien binnen een sterk programma en een actieve community.",
+    boldLine: "Jij weet wat je krijgt. Altijd.",
   },
   {
-    id: "client",
-    name: "Orvia Client",
-    bg: "bg-orvia-dark",
-    textColor: "text-white",
-    dividerColor: "bg-white",
-    image: "/images/role-client.png",
-    description:
-      "Een organisatie die gelooft in wendbaarheid en bewust kiest voor gekwalificeerd Orvia-talent om die wendbaarheid waar te maken.",
-    hoverQuote: "«Placeholder quote voor Orvia Client»",
-  },
-  {
-    id: "driver",
-    name: "Orvia Driver",
-    bg: "bg-orvia-cream",
-    textColor: "text-orvia-dark",
-    dividerColor: "bg-orvia-dark",
-    image: "/images/role-driver.png",
-    description:
-      "Een medewerker van Orvia of één van haar dochters die de beweging mee in de wereld brengt, met daadkracht en vanuit overtuiging.",
-    hoverQuote: "«Placeholder quote voor Orvia Driver»",
+    id: "flexibiliteit",
+    icon: "/images/icon-card-flexibiliteit.svg",
+    title: "Flexibiliteit geeft vrijheid",
+    body: "Meer talent nodig? We schalen op. Minder? We schalen af. Ander profiel nodig? We vervangen. Geen ontslagtrauma, geen slepende gesprekken.",
+    boldLine: "Jij schakelt wanneer de business dat vraagt.",
   },
 ];
 
-function RoleCard({ role }: { role: (typeof roles)[0] }) {
+function ServiceCard({ card }: { card: (typeof cards)[0] }) {
   return (
-    <div className={`${role.bg} flex flex-col p-6 lg:p-[29px] group`}>
-      {/* Role label + divider */}
-      <p className={`font-display font-bold text-[15px] lg:text-[16px] tracking-[1.12px] ${role.textColor} mb-2`}>
-        {role.name}
+    <div className="bg-[#edf5b8] flex flex-col p-6 lg:p-[29px]">
+      <div className="mb-4 w-[80px] h-[80px] relative flex-shrink-0">
+        <Image src={card.icon} alt="" fill sizes="80px" className="object-contain object-left" />
+      </div>
+      <p className="font-display font-black text-[15px] lg:text-[16px] tracking-[1.12px] text-orvia-dark mb-2 leading-[1.4] min-h-[2.8em]">
+        {card.title}
       </p>
-      <div className={`h-px ${role.dividerColor} mb-4`} />
-
-      {/* Description */}
-      <p className={`font-display text-[13px] lg:text-[14px] leading-[1.6] tracking-[0.28px] ${role.textColor} mb-5`}>
-        {role.description}
-      </p>
-
-      {/* Image with hover overlay */}
-      <div className="relative w-full aspect-[242/248] overflow-hidden mt-auto">
-        <Image
-          src={role.image}
-          alt={role.name}
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 flex items-center justify-center p-4 backdrop-blur-md bg-white/25 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <p className="font-display font-semibold text-white text-[14px] lg:text-[15px] leading-snug text-center drop-shadow-md">
-            {role.hoverQuote}
-          </p>
-        </div>
+      <div className="h-px bg-orvia-dark mb-4" />
+      <div className="font-display text-orvia-dark text-[13px] lg:text-[14px] leading-[1.6] tracking-[0.28px]">
+        <p className="mb-4">{card.body}</p>
+        <p className="font-bold">{card.boldLine}</p>
       </div>
     </div>
   );
@@ -82,16 +45,18 @@ function RoleCard({ role }: { role: (typeof roles)[0] }) {
 
 export default function RoleCards() {
   return (
-    <section className="bg-white px-5 md:px-10 lg:px-[75px] pt-12 md:pt-16 lg:pt-20 pb-12 md:pb-16 lg:pb-20">
+    <section className="bg-white section-padding pt-12 md:pt-16 lg:pt-20 pb-12 md:pb-16 lg:pb-[102px]">
       <div className="max-w-[1290px] mx-auto">
-        <h2 className="font-heading font-bold text-orvia-dark text-[28px] md:text-[34px] lg:text-[40px] leading-[1.35] mb-8 lg:mb-10">
-          Welkom in de beweging.
+        <h2 className="font-heading font-bold text-orvia-dark text-[28px] md:text-[34px] lg:text-[40px] leading-[1.35] mb-2 text-center">
+          We brengen wendbaarheid.
         </h2>
+        <p className="font-display font-bold text-orvia-dark text-[16px] lg:text-[18px] mb-8 lg:mb-10 text-center">
+          Dit is hoe we dat aanpakken.
+        </p>
 
-        {/* 1 col on mobile, 2 on md, 4 on lg */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
-          {roles.map((role) => (
-            <RoleCard key={role.id} role={role} />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+          {cards.map((card) => (
+            <ServiceCard key={card.id} card={card} />
           ))}
         </div>
 

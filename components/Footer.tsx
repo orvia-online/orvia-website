@@ -18,7 +18,7 @@ const roleLinks = [
 
 export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColor?: string }) {
   return (
-    <footer className="px-5 md:px-10 lg:px-[75px] pt-8 lg:pt-10 pb-8" style={{ backgroundColor: bgColor }}>
+    <footer className="section-padding pt-8 lg:pt-10 pb-8" style={{ backgroundColor: bgColor }}>
       <div className="max-w-[1290px] mx-auto">
       {/* Top rule */}
       <div className="h-px bg-orvia-dark mb-8" />
@@ -26,9 +26,9 @@ export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColo
       {/* Main footer grid:
           mobile  — 2 cols (logo + CTA / sitemap + roles)
           lg      — 5 cols (logo / sitemap / roles / address / CTA) */}
-      <div className="grid grid-cols-2 lg:grid-cols-[auto_1fr_1fr_1fr_auto] gap-x-8 gap-y-8 lg:gap-x-10 lg:gap-y-0 items-start">
-        {/* Logo */}
-        <div className="col-span-1">
+      <div className="grid grid-cols-2 lg:grid-cols-[auto_1fr_1fr_1fr_auto] gap-x-8 gap-y-8 lg:gap-x-10 lg:gap-y-10 items-start">
+        {/* Logo — row 1, col 1 */}
+        <div className="col-span-1 lg:row-start-1 lg:col-start-1">
           <Image
             src="/images/logo-dark.svg"
             alt="Orvia"
@@ -38,14 +38,16 @@ export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColo
           />
         </div>
 
-        {/* CTA — top-right on mobile, last col on desktop */}
-        <div className="col-span-1 lg:col-start-5 flex flex-col items-end gap-3">
-          <p className="font-display font-bold text-orvia-dark text-[11px] lg:text-[12px] text-right">
-            Powered by{" "}
-            <a href={partnerUrl("fin-forward", "footer-powered-by")} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">Fin Forward</a>
-            {" "}and{" "}
-            <a href={partnerUrl("planet-talent", "footer-powered-by")} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">PlanetTalent</a>
-          </p>
+        {/* Powered by — desktop row 1 col 5 only */}
+        <p className="hidden lg:block lg:row-start-1 lg:col-start-5 font-display font-bold text-orvia-dark text-[12px] text-right">
+          Powered by{" "}
+          <a href={partnerUrl("fin-forward", "footer-powered-by")} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">Fin Forward</a>
+          {" "}and{" "}
+          <a href={partnerUrl("planet-talent", "footer-powered-by")} target="_blank" rel="noopener noreferrer" className="underline hover:opacity-70">PlanetTalent</a>
+        </p>
+
+        {/* Contacteer — top-right on mobile, row 2 col 5 on desktop */}
+        <div className="col-span-1 flex justify-end lg:flex lg:justify-end lg:row-start-2 lg:col-start-5">
           <Link href="/contact" className="inline-flex items-center group">
             <span className="h-[37px] bg-orvia-lime rounded-full flex items-center pl-5 pr-4 -mr-[3px] font-display font-bold text-[14px] text-orvia-dark group-hover:bg-[#d4e15c] transition-colors">
               Contacteer
@@ -58,8 +60,8 @@ export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColo
           </Link>
         </div>
 
-        {/* Sitemap */}
-        <div className="col-span-1">
+        {/* Sitemap — row 2, col 1 */}
+        <div className="col-span-1 lg:row-start-2 lg:col-start-1">
           <p className="font-display font-bold text-orvia-dark text-[14px] lg:text-[16px] leading-[22px] mb-1">
             Sitemap
           </p>
@@ -77,8 +79,8 @@ export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColo
           </ul>
         </div>
 
-        {/* Onze rollen */}
-        <div className="col-span-1">
+        {/* Onze rollen — row 2, col 2 */}
+        <div className="col-span-1 lg:row-start-2 lg:col-start-2">
           <p className="font-display font-bold text-orvia-dark text-[14px] lg:text-[16px] leading-[22px] mb-1">
             Onze rollen
           </p>
@@ -96,13 +98,16 @@ export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColo
           </ul>
         </div>
 
-        {/* Address — full-width on mobile, own col on desktop */}
-        <div className="col-span-2 lg:col-span-1">
+        {/* Address — full-width on mobile, col 4 on desktop (gap at col 3) */}
+        <div className="col-span-2 lg:col-span-1 lg:row-start-2 lg:col-start-4">
           <p className="font-display font-bold text-orvia-dark text-[14px] lg:text-[16px] leading-[22px] mb-1">
             Orvia
           </p>
+          <p className="font-display text-orvia-dark text-[14px] lg:text-[16px] leading-[22px] whitespace-nowrap">
+            Frank van Dyckelaan 7b
+          </p>
           <p className="font-display text-orvia-dark text-[14px] lg:text-[16px] leading-[22px]">
-            Frank van Dyckelaan 7b, 9140 Temse
+            9140 Temse
           </p>
           <p className="font-display text-orvia-dark text-[14px] lg:text-[16px] leading-[22px]">
             België
@@ -113,20 +118,22 @@ export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColo
       {/* Legal links */}
       <div className="mt-10 lg:mt-16 flex flex-wrap items-center gap-5 lg:gap-8">
         <Link
-          href="/privacy-policy"
+          href="/privacyverklaring"
           className="font-body text-orvia-dark text-[12px] underline hover:opacity-70"
         >
-          Privacy policy
+          Privacyverklaring
         </Link>
         <Link
-          href="/cookie-policy"
+          href="/cookieverklaring"
           className="font-body text-orvia-dark text-[12px] underline hover:opacity-70"
         >
-          Cookie policy
+          Cookieverklaring
         </Link>
         <Link
           href="/algemene-voorwaarden"
-          className="font-body text-orvia-dark text-[12px] underline hover:opacity-70"
+          className="sr-only"
+          tabIndex={-1}
+          aria-hidden="true"
         >
           Algemene voorwaarden
         </Link>

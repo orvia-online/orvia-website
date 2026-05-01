@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function WarForTalent() {
   return (
-    <section className="bg-orvia-cream py-12 md:py-16 lg:py-20 px-5 md:px-10 lg:px-[75px]">
+    <section className="bg-orvia-cream pt-12 pb-12 md:pt-16 md:pb-16 lg:pt-[88px] lg:pb-[55px] section-padding">
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16 max-w-[1290px] mx-auto">
         {/* Text */}
         <div className="w-full lg:flex-1">
@@ -14,33 +14,28 @@ export default function WarForTalent() {
 
           <div className="font-display text-orvia-dark text-[15px] lg:text-[16px] tracking-[0.8px] leading-relaxed space-y-4 max-w-[598px]">
             <p>
-              Lonen hoger dan ooit. Welzijnsbudgetten gaan door het dak. En
-              toch zien we meer uitval, minder productiviteit en een dalende
-              betrokkenheid.
+              Lonen liggen hoger dan ooit. Welzijnsbudgetten gaan door het dak.
+              En toch zien we meer uitval, minder productiviteit en een dalende
+              betrokkenheid. De oorzaak ligt niet bij de mensen. Die ligt in het
+              denken.
             </p>
             <p>
-              <strong className="font-semibold">
-                Het systeem werkt niet meer, voor niemand.{" "}
+              <strong className="font-bold">
+                Wie zijn hele HR-beleid bouwt rond talent vinden én houden,
+                verliest vroeg of laat het zicht op performance.{" "}
               </strong>
-              Niet voor de organisatie die talent vasthoudt uit angst en
-              ondertussen performance verliest. Niet voor de professional die
-              blijft omdat het comfortabel is, maar langzaam krimpt in plaats
-              van groeit.
+              Het gevolg? Managers die geen verwachtingen meer durven uitspreken
+              en moeilijke gesprekken die niet worden aangegaan.
             </p>
             <p>
-              <strong className="font-semibold">
-                Wendbaarheid is het antwoord.{" "}
+              Wie niet bereid is iemand te verliezen, krijgt nooit het beste
+              van diezelfde persoon.{" "}
+              <strong className="font-bold">
+                Bij Orvia stellen we de economische realiteit centraal. Impact
+                voor profiel en performance voor retentie.{" "}
               </strong>
-              Voor organisaties die scherp willen blijven. Voor professionals
-              die willen groeien op basis van impact, niet op basis van hoe
-              lang ze ergens zitten.
-            </p>
-            <p>
-              <strong className="font-semibold">
-                Bij Orvia stellen we de economische realiteit centraal voor
-                beide kanten.{" "}
-              </strong>
-              Impact voor profiel en performance voor retentie.
+              Wil je betere performance van je mensen? Stop dan eerst met
+              vasthouden.
             </p>
           </div>
         </div>
@@ -51,6 +46,7 @@ export default function WarForTalent() {
             src="/images/content-photo.png"
             alt="Orvia in actie"
             fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-cover"
           />
         </div>

@@ -36,14 +36,14 @@ export default function ContactContent() {
   return (
     <section
       id="contact-form"
-      className="bg-orvia-cream px-5 md:px-10 lg:px-[75px] py-12 md:py-16 lg:py-20"
+      className="bg-orvia-cream section-padding py-12 md:py-16 lg:py-20"
     >
       <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 max-w-[1290px] mx-auto">
         {/* Left column — direct contact + partner blocks */}
         <div className="w-full lg:w-[42%] lg:flex-shrink-0 flex flex-col gap-10 lg:gap-12">
           {/* Direct contact */}
           <div>
-            <p className="font-display font-bold text-orvia-dark text-[16px] tracking-[1.12px] leading-[1.4] uppercase mb-4">
+            <p className="font-display font-black text-orvia-dark text-[16px] tracking-[1.12px] leading-[1.4] uppercase mb-4">
               Direct contact
             </p>
             <div className="font-display text-orvia-dark text-[16px] tracking-[0.8px] leading-[1.7]">
@@ -57,7 +57,7 @@ export default function ContactContent() {
           {/* Planet Talent + Fin Forward — side by side */}
           <div className="grid grid-cols-2 gap-8">
             <div className="flex flex-col items-start">
-              <p className="font-display font-bold text-orvia-dark text-[16px] tracking-[1.12px] leading-[1.4] uppercase mb-3">
+              <p className="font-display font-black text-orvia-dark text-[16px] tracking-[1.12px] leading-[1.4] uppercase mb-3">
                 Planet Talent
               </p>
               <p className="font-display text-orvia-dark text-[16px] tracking-[0.8px] leading-[1.7] mb-5">
@@ -67,7 +67,7 @@ export default function ContactContent() {
             </div>
 
             <div className="flex flex-col items-start">
-              <p className="font-display font-bold text-orvia-dark text-[16px] tracking-[1.12px] leading-[1.4] uppercase mb-3">
+              <p className="font-display font-black text-orvia-dark text-[16px] tracking-[1.12px] leading-[1.4] uppercase mb-3">
                 Fin Forward
               </p>
               <p className="font-display text-orvia-dark text-[16px] tracking-[0.8px] leading-[1.7] mb-5">
@@ -80,7 +80,7 @@ export default function ContactContent() {
 
         {/* Right column — contact form */}
         <div className="w-full lg:flex-1">
-          <ContactForm variant="contact" inline />
+          <ContactForm variant="contact" inline source="Contactpagina" />
         </div>
       </div>
     </section>

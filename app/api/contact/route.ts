@@ -7,7 +7,7 @@ if (!RESEND_API_KEY) {
 }
 
 const RECIPIENT_EMAIL = process.env.RECIPIENT_EMAIL ?? "info@orvia.be";
-const FROM_EMAIL = process.env.FROM_EMAIL ?? "noreply@orvia.be";
+const FROM_EMAIL = process.env.FROM_EMAIL ?? "hallo@orvia.be";
 
 const resend = new Resend(RESEND_API_KEY);
 
@@ -32,13 +32,34 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Ongeldig verzoekformaat." }, { status: 400 });
     }
 
-    const { name, email, phone, message, interests, variant } = body as Record<string, unknown>;
+    const { name, email, phone, message, website, interests, variant, source } = body as Record<string, unknown>;
+
+    if (website) {
+      return NextResponse.json({ success: true });
+    }
 
     if (!name || typeof name !== "string" || !email || typeof email !== "string") {
       return NextResponse.json(
         { error: "Naam en e-mailadres zijn verplicht." },
         { status: 400 }
       );
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || email.length > 254) {
+      return NextResponse.json({ error: "Ongeldig e-mailadres." }, { status: 400 });
+    }
+
+    if (name.length > 100) {
+      return NextResponse.json({ error: "Naam is te lang." }, { status: 400 });
+    }
+
+    if (phone && typeof phone === "string" && phone.length > 30) {
+      return NextResponse.json({ error: "Telefoonnummer is te lang." }, { status: 400 });
+    }
+
+    if (message && typeof message === "string" && message.length > 5000) {
+      return NextResponse.json({ error: "Bericht is te lang (max. 5000 tekens)." }, { status: 400 });
     }
 
     const subjectPrefix =
@@ -49,6 +70,8 @@ export async function POST(request: Request) {
         ? `<ul>${interests.map((i) => `<li>${esc(String(i))}</li>`).join("")}</ul>`
         : "<p>Geen opgegeven</p>";
 
+    const sourceLabel = source && typeof source === "string" ? source : "Onbekend";
+
     const html = `
       <h2>Nieuw bericht via het Orvia-contactformulier (${subjectPrefix})</h2>
       <table cellpadding="6" style="border-collapse:collapse">
@@ -57,6 +80,7 @@ export async function POST(request: Request) {
         <tr><td><strong>Telefoon</strong></td><td>${phone && typeof phone === "string" ? esc(phone) : "—"}</td></tr>
         <tr><td><strong>Bericht</strong></td><td>${message && typeof message === "string" ? esc(message) : "—"}</td></tr>
         <tr><td><strong>Interesse</strong></td><td>${interestsList}</td></tr>
+        <tr><td><strong>Pagina</strong></td><td>${esc(sourceLabel)}</td></tr>
       </table>
     `;
 
@@ -64,7 +88,7 @@ export async function POST(request: Request) {
       from: FROM_EMAIL,
       to: RECIPIENT_EMAIL,
       replyTo: email,
-      subject: `[Orvia] ${subjectPrefix} — ${name}`,
+      subject: `[Orvia] ${subjectPrefix} — ${name} (${sourceLabel})`,
       html,
     });
 

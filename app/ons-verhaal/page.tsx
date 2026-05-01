@@ -7,10 +7,11 @@ import Marquee from "@/components/Marquee";
 import OnsVerhaalHero from "@/components/ons-verhaal/OnsVerhaalHero";
 import WaaromWeDitDoen from "@/components/ons-verhaal/WaaromWeDitDoen";
 import WatOnsDrijft from "@/components/ons-verhaal/WatOnsDrijft";
-import WijMakenTalent from "@/components/ons-verhaal/WijMakenTalent";
 
 export const metadata: Metadata = {
   title: "Ons verhaal — Orvia",
+  description:
+    "Orvia ontstond uit de overtuiging dat talent pas écht groeit met eerlijkheid, niet met comfort. Lees het verhaal van Kristel Seymus en Sophie Buysse.",
 };
 
 export default function OnsVerhaalPage() {
@@ -21,16 +22,16 @@ export default function OnsVerhaalPage() {
         <OnsVerhaalHero />
       </div>
       <Marquee
-        text={`\u201cTough love is de enige liefde die telt.\u201d`}
+        text="Tough love is de enige liefde die telt."
         bg="var(--color-orvia-blue)"
       />
       <WaaromWeDitDoen />
       <WatOnsDrijft />
-      <WijMakenTalent />
       <ContactForm
         variant="contact"
         heading="Herken jij jezelf in dit verhaal?"
         subtext="Dan weet je waar je moet zijn."
+        source="Ons verhaal"
       />
       <Footer />
       <BackToTop />

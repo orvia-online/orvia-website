@@ -42,12 +42,12 @@ const dimensions = [
 
 export default function QLabelSection() {
   return (
-    <section className="bg-white px-5 md:px-10 lg:px-[75px] pt-12 md:pt-16 lg:pt-20 pb-12 md:pb-16 lg:pb-20">
+    <section className="bg-white section-padding pt-16 md:pt-20 lg:pt-[98px] pb-0">
       <div className="max-w-[1290px] mx-auto">
         {/* Heading */}
         <div className="text-center mb-8 md:mb-10 lg:mb-12">
           <h2 className="font-heading font-bold text-orvia-dark text-[28px] md:text-[34px] lg:text-[40px] leading-[1.35] mb-3">
-            Kwaliteit die je kunt aantonen
+            Kwaliteit die je kunt aantonen.
           </h2>
           <p className="font-display font-bold text-orvia-dark text-[16px] lg:text-[18px]">
             Een Q-label met drie dimensies.
@@ -69,7 +69,7 @@ export default function QLabelSection() {
               </div>
 
               {/* Row 2: Label */}
-              <p className="font-display font-bold text-orvia-dark text-[14px] lg:text-[16px] leading-[1.4] tracking-[1.12px]">
+              <p className="font-display font-black text-orvia-dark text-[14px] lg:text-[16px] leading-[1.4] tracking-[1.12px]">
                 {dim.title}
                 <br />
                 {dim.subtitle}

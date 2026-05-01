@@ -70,7 +70,7 @@ function StatItem({
   const count = useCountUp(target, duration, started);
   return (
     <div>
-      <p className="font-display font-bold text-orvia-dark text-[28px] md:text-[32px] leading-[1.4] tracking-[2.24px] tabular-nums">
+      <p className="font-display font-black text-orvia-dark text-[28px] md:text-[32px] leading-[1.4] tracking-[2.24px] tabular-nums">
         {formatCount(count, suffix)}
       </p>
       <p className="font-display text-orvia-dark text-[15px] lg:text-[16px] leading-[1.5] tracking-[0.8px]">
@@ -102,7 +102,7 @@ export default function CommunitySection() {
   }, []);
 
   return (
-    <section className="bg-orvia-cream px-5 md:px-10 lg:px-[75px] py-12 md:py-16 lg:py-20">
+    <section className="bg-orvia-cream section-padding pt-12 md:pt-16 lg:pt-[113px] pb-12 md:pb-16 lg:pb-20">
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start max-w-[1290px] mx-auto">
 
         {/* ── Left column ── */}
@@ -146,7 +146,7 @@ export default function CommunitySection() {
             src={COMMUNITY_PHOTO}
             alt="Persoon in beweging"
             fill
-            className="object-contain"
+            className="object-cover"
             sizes="(max-width: 1024px) 100vw, 595px"
           />
         </div>

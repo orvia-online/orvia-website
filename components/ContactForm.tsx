@@ -18,9 +18,10 @@ interface ContactFormProps {
   subtext?: string;
   /** Render only the form fields with no section wrapper or heading column */
   inline?: boolean;
+  source?: string;
 }
 
-export default function ContactForm({ variant, heading, subtext, inline = false }: ContactFormProps) {
+export default function ContactForm({ variant, heading, subtext, inline = false, source }: ContactFormProps) {
   const [formState, setFormState] = useState<FormState>("idle");
   const [interests, setInterests] = useState<string[]>([]);
   const [errorMessage, setErrorMessage] = useState("");
@@ -42,8 +43,10 @@ export default function ContactForm({ variant, heading, subtext, inline = false 
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+      website: (form.elements.namedItem("website") as HTMLInputElement).value,
       interests,
       variant,
+      source,
     };
 
     try {
@@ -80,6 +83,12 @@ export default function ContactForm({ variant, heading, subtext, inline = false 
     </div>
   ) : (
     <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+      {/* Honeypot — verborgen voor mensen, ingevuld door bots */}
+      <div style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }} aria-hidden="true">
+        <label htmlFor="website">Website</label>
+        <input name="website" id="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       {/* Name */}
       <div>
         <label className="block font-display font-bold text-orvia-dark text-[10px] tracking-[0.8px] uppercase mb-1">
@@ -199,10 +208,10 @@ export default function ContactForm({ variant, heading, subtext, inline = false 
   }
 
   return (
-    <section id="contact-form" className="bg-orvia-blue relative overflow-hidden py-12 md:py-16 lg:py-20 px-5 md:px-10 lg:px-[75px]">
+    <section id="contact-form" className="bg-orvia-blue relative overflow-hidden pt-12 md:pt-16 lg:pt-[59px] pb-12 md:pb-16 lg:pb-20 section-padding">
       {/* Decorative plant — hidden on mobile to avoid clutter */}
       <div className="hidden lg:block absolute -left-[30px] bottom-0 w-[412px] h-[449px] pointer-events-none select-none opacity-60">
-        <Image src="/images/deco-plant.svg" alt="" fill />
+        <Image src="/images/deco-plant.svg" alt="" fill sizes="412px" />
       </div>
 
       <div className="relative z-10 flex flex-col lg:flex-row gap-10 lg:gap-16 max-w-[1290px] mx-auto">

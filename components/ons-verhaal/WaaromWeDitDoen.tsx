@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function WaaromWeDitDoen() {
   return (
-    <section className="bg-white px-5 md:px-10 lg:px-[75px] pt-16 md:pt-20 lg:pt-24 pb-12 md:pb-16 lg:pb-20">
+    <section className="bg-white section-padding pt-16 md:pt-20 lg:pt-[77px] pb-12 md:pb-16 lg:pb-[63px]">
       <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16 max-w-[1290px] mx-auto">
 
         {/* Photo + caption column */}
@@ -13,6 +13,7 @@ export default function WaaromWeDitDoen() {
               src="/images/ons-verhaal-founders.png"
               alt="Oprichters Kristel Seymus en Sophie Buysse"
               fill
+              sizes="(max-width: 1024px) 100vw, 564px"
               className="object-cover"
             />
           </div>

@@ -20,11 +20,11 @@ export default function Marquee({
         className="flex whitespace-nowrap animate-marquee"
         style={{ willChange: "transform" }}
       >
-        <span className="font-display font-bold text-orvia-dark text-[18px] tracking-[1.26px]">
+        <span className="font-display font-black text-orvia-dark text-[18px] tracking-[1.26px]">
           {items}
         </span>
         <span
-          className="font-display font-bold text-orvia-dark text-[18px] tracking-[1.26px]"
+          className="font-display font-black text-orvia-dark text-[18px] tracking-[1.26px]"
           aria-hidden
         >
           {items}

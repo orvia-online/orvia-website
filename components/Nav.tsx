@@ -49,7 +49,7 @@ export default function Nav({ theme = "dark" }: { theme?: "dark" | "light" }) {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`font-display font-semibold text-[15px] tracking-[0.48px] transition-opacity hover:opacity-70 ${isActive ? "text-[#ec612c] underline underline-offset-2" : textColor}`}
+                  className={`font-display font-bold text-[15px] tracking-[0.48px] transition-opacity hover:opacity-70 ${isActive ? "text-[#ec612c] underline underline-offset-2" : textColor}`}
                 >
                   {link.label}
                 </Link>
@@ -99,7 +99,7 @@ export default function Nav({ theme = "dark" }: { theme?: "dark" | "light" }) {
                   <Link
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
-                    className={`font-display font-semibold text-[17px] tracking-[0.48px] ${isActive ? "text-[#ec612c] underline underline-offset-2" : textColor}`}
+                    className={`font-display font-bold text-[17px] tracking-[0.48px] ${isActive ? "text-[#ec612c] underline underline-offset-2" : textColor}`}
                   >
                     {link.label}
                   </Link>
