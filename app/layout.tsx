@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const conso = localFont({
@@ -67,7 +68,10 @@ export default function RootLayout({
       className={`${conso.variable} ${agrandir.variable}`}
       data-scroll-behavior="smooth"
     >
-      <body className="min-h-screen">{children}</body>
+      <body className="min-h-screen">
+        {children}
+        <Analytics />
+      </body>
     </html>
   );
 }
