@@ -5,7 +5,7 @@ const UTM_BASE = {
 };
 
 const BASES = {
-  "planet-talent": "https://www.planet-talent.com",
+  "planet-talent": "https://www.planet-talent.com/voor-bedrijven",
   "fin-forward": "https://finforward.be",
 };
 

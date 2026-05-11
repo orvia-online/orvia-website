@@ -42,7 +42,7 @@ export default function WijMakenTalent({ bg = "bg-orvia-cream", source = "ons-ve
             <a href={partnerUrl("fin-forward", `${source}-inline`)} target="_blank" rel="noopener noreferrer" className="text-[#ec612c] underline hover:opacity-70 transition-opacity">
               Fin Forward
             </a>
-            {" "}levert financiële expertise voor continuïteit en versterking. Beiden delen dezelfde overtuiging: dat het anders en beter kan.
+            {" "}levert financiële expertise voor continuïteit en versterking. Beide delen dezelfde overtuiging: dat het anders en beter kan.
           </p>
         </div>
 
