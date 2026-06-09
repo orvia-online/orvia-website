@@ -49,10 +49,10 @@ export default function Footer({ bgColor = "var(--color-orvia-blue)" }: { bgColo
         {/* Contacteer — top-right on mobile, row 2 col 5 on desktop */}
         <div className="col-span-1 flex justify-end lg:flex lg:justify-end lg:row-start-2 lg:col-start-5">
           <Link href="/contact" className="inline-flex items-center group">
-            <span className="h-[37px] bg-orvia-lime rounded-full flex items-center pl-5 pr-4 -mr-[3px] font-display font-bold text-[14px] text-orvia-dark group-hover:bg-[#d4e15c] transition-colors">
+            <span className="h-[37px] bg-orvia-lime rounded-full flex items-center pl-5 pr-4 -mr-[3px] font-display font-bold text-[14px] text-orvia-dark group-hover:bg-[#c0d03a] transition-colors">
               Contacteer
             </span>
-            <span className="relative z-10 flex-shrink-0 w-[37px] h-[37px] bg-orvia-lime rounded-full flex items-center justify-center text-orvia-dark group-hover:bg-[#d4e15c] transition-colors">
+            <span className="relative z-10 flex-shrink-0 w-[37px] h-[37px] bg-orvia-lime rounded-full flex items-center justify-center text-orvia-dark group-hover:bg-[#c0d03a] transition-colors">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 13L12 4M12 4H5M12 4V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

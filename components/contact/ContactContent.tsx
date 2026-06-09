@@ -18,7 +18,7 @@ function PartnerButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center hover:opacity-90 transition-opacity${className ? ` ${className}` : ""}`}
+      className={`inline-flex items-center hover:opacity-65 transition-opacity${className ? ` ${className}` : ""}`}
     >
       <span className={`h-12 ${bg} rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark`}>
         {label}

@@ -15,15 +15,15 @@ export default function OnsVerhaalHero() {
             <p>
               Alles begint met liefde voor talent. Echte liefde. Niet de versie die iemand comfortabel houdt terwijl er meer in zit, maar de versie die durft te zeggen waar iemand zijn volle potentieel kan benutten. Die het gesprek voert dat anderen vermijden. Niet om te confronteren, maar omdat stilzwijgen niemand verder brengt.
             </p>
-            <p>
+            <p className="font-bold">
               Dat is Tough Love. En het is de enige liefde die telt.
             </p>
           </div>
           <Link href="/hoe-we-werken" className="inline-flex items-center group">
-            <span className="h-12 bg-orvia-blue rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark group-hover:bg-[#aabff0] transition-colors">
+            <span className="h-12 bg-orvia-blue rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark group-hover:bg-[#8aafe8] transition-colors">
               Benieuwd hoe we werken?
             </span>
-            <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-blue rounded-full flex items-center justify-center text-orvia-dark group-hover:bg-[#aabff0] transition-colors">
+            <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-blue rounded-full flex items-center justify-center text-orvia-dark group-hover:bg-[#8aafe8] transition-colors">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 13L12 4M12 4H5M12 4V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

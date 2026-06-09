@@ -10,28 +10,28 @@ const values = [
     iconH: 66,
   },
   {
-    id: "lef",
-    label: "Lef",
+    id: "courage",
+    label: "Courage",
     description: "Zeggen wat anderen verzwijgen. Doen wat anderen uitstellen.",
-    icon: "/images/icon-lef.svg",
+    icon: "/images/icon-courage.svg",
     iconW: 72,
     iconH: 69,
   },
   {
-    id: "blijven-groeien",
-    label: "Blijven groeien",
+    id: "always-learning",
+    label: "Always learning",
     description: "Groeien betekent soms loslaten wat je was om te worden wat je kunt zijn.",
-    icon: "/images/icon-blijven-groeien.svg",
+    icon: "/images/icon-always-learning.svg",
     iconW: 71,
     iconH: 71,
   },
   {
-    id: "menselijk",
-    label: "Menselijk",
+    id: "human",
+    label: "Human",
     description: "Onder elke rol, elk profiel, elk cijfer zit een mens. Daar beginnen we.",
-    icon: "/images/icon-menselijk.svg",
-    iconW: 68,
-    iconH: 67,
+    icon: "/images/icon-human.svg",
+    iconW: 79,
+    iconH: 76,
   },
 ];
 
@@ -43,9 +43,9 @@ export default function WatOnsDrijft() {
         Wat ons drijft?
       </h2>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-x-5 lg:gap-y-0">
         {values.map((value) => (
-          <div key={value.id} className="bg-white px-6 pt-10 pb-6 lg:px-[29px] lg:pt-[64px] lg:pb-[29px] flex flex-col">
+          <div key={value.id} className="bg-white px-6 pt-10 pb-6 lg:px-[29px] lg:pt-[64px] lg:pb-[29px] flex flex-col lg:[grid-row:span_4] lg:grid lg:[grid-template-rows:subgrid]">
             {/* Icon — fixed-height container keeps all icon bottoms on the same baseline */}
             <div className="mb-5 lg:h-[71px] lg:flex lg:items-end lg:mb-[55px]">
               <Image

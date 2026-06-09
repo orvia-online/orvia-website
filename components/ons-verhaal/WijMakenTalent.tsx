@@ -59,7 +59,7 @@ export default function WijMakenTalent({ bg = "bg-orvia-cream", source = "ons-ve
                 className="object-contain object-left"
               />
             </div>
-            <a href={partnerUrl("planet-talent", `${source}-partner-cta`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity whitespace-nowrap">
+            <a href={partnerUrl("planet-talent", `${source}-partner-cta`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-65 transition-opacity whitespace-nowrap">
               <span className="h-12 bg-[#f8cd41] rounded-full flex items-center pl-5 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark">
                 Planet Talent
               </span>
@@ -82,7 +82,7 @@ export default function WijMakenTalent({ bg = "bg-orvia-cream", source = "ons-ve
                 className="object-contain object-left"
               />
             </div>
-            <a href={partnerUrl("fin-forward", `${source}-partner-cta`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-80 transition-opacity whitespace-nowrap">
+            <a href={partnerUrl("fin-forward", `${source}-partner-cta`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center hover:opacity-65 transition-opacity whitespace-nowrap">
               <span className="h-12 bg-[#ec612c] rounded-full flex items-center pl-5 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark">
                 Fin Forward
               </span>

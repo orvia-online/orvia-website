@@ -1,9 +1,6 @@
-import Image from "next/image";
-
 const dimensions = [
   {
     id: "skillset",
-    icon: "/images/icon-qlabel-skillset.svg",
     title: "Skillset:",
     subtitle: "wat je kan",
     items: [
@@ -15,7 +12,6 @@ const dimensions = [
   },
   {
     id: "mindset",
-    icon: "/images/icon-qlabel-mindset.svg",
     title: "Mindset:",
     subtitle: "hoe je (samen)werkt",
     items: [
@@ -28,7 +24,6 @@ const dimensions = [
   },
   {
     id: "ecosystem",
-    icon: "/images/icon-qlabel-ecosystem.svg",
     title: "Ecosystem fit:",
     subtitle: "bijdrage aan het grotere geheel",
     items: [
@@ -55,20 +50,10 @@ export default function QLabelSection() {
         </div>
 
         {/* Dimension cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-y-0 lg:gap-x-5 md:grid-rows-[auto_auto_auto_1fr_auto] md:min-h-[440px] lg:min-h-[440px]">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-y-0 lg:gap-x-5 md:grid-rows-[auto_auto_1fr_auto] md:min-h-[368px] lg:min-h-[368px]">
           {dimensions.map((dim) => (
-            <div key={dim.id} className="bg-[#edf5b8] pt-12 px-6 pb-6 md:pt-16 lg:pt-[93px] lg:px-7 lg:pb-7 flex flex-col min-h-[300px] md:grid md:grid-rows-subgrid md:row-span-5">
-              {/* Row 1: Icon */}
-              <div className="pb-4">
-                <Image
-                  src={dim.icon}
-                  alt=""
-                  width={55}
-                  height={57}
-                />
-              </div>
-
-              {/* Row 2: Label */}
+            <div key={dim.id} className="bg-[#edf5b8] pt-12 px-6 pb-6 md:pt-16 lg:pt-[93px] lg:px-7 lg:pb-7 flex flex-col min-h-[300px] md:grid md:grid-rows-subgrid md:row-span-4">
+              {/* Row 1: Label */}
               <p className="font-display font-black text-orvia-dark text-[14px] lg:text-[16px] leading-[1.4] tracking-[1.12px]">
                 {dim.title}
                 <br />

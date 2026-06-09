@@ -187,14 +187,14 @@ export default function ContactForm({ variant, heading, subtext, inline = false,
         disabled={formState === "loading"}
         className="inline-flex items-center group disabled:opacity-60"
       >
-        <span className="h-12 bg-orvia-dark rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-white group-hover:bg-[#3a3533] transition-colors">
+        <span className="h-12 bg-orvia-dark rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-white group-hover:bg-[#5c5956] transition-colors">
           {formState === "loading"
             ? "Bezig..."
             : variant === "download"
             ? "Download het charter"
             : "Verstuur"}
         </span>
-        <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-dark rounded-full flex items-center justify-center text-white group-hover:bg-[#3a3533] transition-colors">
+        <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-dark rounded-full flex items-center justify-center text-white group-hover:bg-[#5c5956] transition-colors">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
             <path d="M3 13L12 4M12 4H5M12 4V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>

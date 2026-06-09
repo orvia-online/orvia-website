@@ -29,17 +29,17 @@ export default function WaaromWeDitDoen() {
           </h2>
           <div className="font-display text-orvia-dark text-[15px] lg:text-[16px] tracking-[0.8px] leading-relaxed space-y-4 max-w-[582px] mb-8 lg:mb-10">
             <p>
-              Omdat we zagen wat er misloopt. Professionals die vastzitten op plekken waar ze krimpen in plaats van groeien. Organisaties die talent vasthouden uit angst in plaats van het te laten renderen. Een systeem dat iedereen belooft te helpen, maar steeds minder levert.
+              Omdat we zagen wat er misloopt. Professionals die vastzitten op plekken waar ze krimpen in plaats van groeien. Organisaties die talent vasthouden uit angst in plaats van het te laten renderen. <strong className="font-bold">Een systeem dat iedereen belooft te helpen, maar steeds minder levert.</strong>
             </p>
             <p>
-              Orvia bestaat omdat we geloven dat het anders kan. Dat talent stroomt wanneer je het ruimte geeft. Dat eerlijkheid méér oplevert dan comfort. Dat de beste samenwerking begint met de moed om de juiste vragen te stellen.
+              Orvia bestaat omdat we geloven dat het anders kan. Dat <strong className="font-bold">talent stroomt wanneer je het ruimte geeft.</strong> Dat eerlijkheid méér oplevert dan comfort. Dat de beste samenwerking begint met de moed om de juiste vragen te stellen.
             </p>
           </div>
           <Link href="/het-ecosysteem" className="inline-flex items-center group">
-            <span className="h-12 bg-orvia-blue rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark group-hover:bg-[#aabff0] transition-colors">
+            <span className="h-12 bg-orvia-blue rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-orvia-dark group-hover:bg-[#8aafe8] transition-colors">
               Ons ecosysteem
             </span>
-            <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-blue rounded-full flex items-center justify-center text-orvia-dark group-hover:bg-[#aabff0] transition-colors">
+            <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-blue rounded-full flex items-center justify-center text-orvia-dark group-hover:bg-[#8aafe8] transition-colors">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 13L12 4M12 4H5M12 4V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

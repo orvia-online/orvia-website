@@ -42,18 +42,9 @@ export const metadata: Metadata = {
     type: "website",
     locale: "nl_BE",
     siteName: "Orvia",
-    images: [
-      {
-        url: "/images/og-default.png",
-        width: 1200,
-        height: 630,
-        alt: "Orvia — Tough love for talent",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    images: ["/images/og-default.png"],
   },
 };
 

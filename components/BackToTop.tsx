@@ -21,7 +21,7 @@ export default function BackToTop() {
     <button
       onClick={scrollToTop}
       aria-label="Terug naar boven"
-      className="fixed bottom-8 right-8 z-50 flex items-center justify-center w-12 h-12 bg-orvia-lime text-orvia-dark rounded-full shadow-md hover:bg-[#d4e15c] transition-colors text-xl font-bold"
+      className="fixed bottom-8 right-8 z-50 flex items-center justify-center w-12 h-12 bg-orvia-lime text-orvia-dark rounded-full shadow-md hover:bg-[#c0d03a] transition-colors text-xl font-bold"
     >
       ↑
     </button>

@@ -3,42 +3,44 @@ import Link from "next/link";
 
 const cards = [
   {
-    id: "ontzorging",
-    icon: "/images/icon-card-ontzorging.svg",
-    title: "Ontzorging geeft performance",
-    body: "People management vreet energie die je nodig hebt voor strategie en groei. Coaching, ontwikkeling, moeilijke gesprekken: wij nemen het over. Jij geeft richting en boekt resultaten.",
-    boldLine: "Wij het peoplemanagement. Jij de performance.",
+    id: "continu",
+    icon: "/images/icon-card-continu.svg",
+    iconW: 64,
+    iconH: 61,
+    title: "Continu aligneren.",
+    body: "Anderen beginnen bij een profiel. Wij beginnen bij wat er moet gebeuren. Wat moet er beter, sneller, anders? Pas dan kijken we wie daarvoor nodig is.",
   },
   {
-    id: "qlabel",
-    icon: "/images/icon-card-qlabel.svg",
-    title: "Het Q-label geeft zekerheid",
-    body: "Elk Orvia-talent doorloopt ons Quality Label en wordt continu begeleid op skillset, mindset en ecosysteemfit. Ze groeien binnen een sterk programma en een actieve community.",
-    boldLine: "Jij weet wat je krijgt. Altijd.",
+    id: "kwaliteit",
+    icon: "/images/icon-card-kwaliteit.svg",
+    iconW: 74,
+    iconH: 70,
+    title: "Kwaliteit is geen belofte. Het is een traject.",
+    body: "Iedereen claimt kwaliteit. Wij leggen het vast. Op drie assen die er echt toe doen: wat iemand kan, hoe iemand werkt en of iemand bijdraagt aan het grotere geheel.",
   },
   {
-    id: "flexibiliteit",
-    icon: "/images/icon-card-flexibiliteit.svg",
-    title: "Flexibiliteit geeft vrijheid",
-    body: "Meer talent nodig? We schalen op. Minder? We schalen af. Ander profiel nodig? We vervangen. Geen ontslagtrauma, geen slepende gesprekken.",
-    boldLine: "Jij schakelt wanneer de business dat vraagt.",
+    id: "klant",
+    icon: "/images/icon-card-klant.svg",
+    iconW: 75,
+    iconH: 73,
+    title: "Jij bent de klant, wij de werkgever.",
+    body: "In elke samenwerking zijn er drie partijen. Wij laten die driehoek niet voor wat hij is, wij managen hem. Van verwachtingen stellen tot feedback geven.",
   },
 ];
 
 function ServiceCard({ card }: { card: (typeof cards)[0] }) {
   return (
-    <div className="bg-[#edf5b8] flex flex-col p-6 lg:p-[29px]">
-      <div className="mb-4 w-[80px] h-[80px] relative flex-shrink-0">
-        <Image src={card.icon} alt="" fill sizes="80px" className="object-contain object-left" />
+    <div className="bg-[#edf5b8] flex flex-col p-8 lg:p-10 lg:[grid-row:span_4] lg:grid lg:[grid-template-rows:subgrid]">
+      <div className="mb-4 lg:h-[80px] lg:flex lg:items-end lg:mb-6">
+        <Image src={card.icon} alt="" width={card.iconW} height={card.iconH} className="max-w-[80px]" />
       </div>
-      <p className="font-display font-black text-[15px] lg:text-[16px] tracking-[1.12px] text-orvia-dark mb-2 leading-[1.4] min-h-[2.8em]">
+      <p className="font-display font-black text-[15px] lg:text-[16px] tracking-[1.12px] text-orvia-dark mb-2 leading-[1.4]">
         {card.title}
       </p>
-      <div className="h-px bg-orvia-dark mb-4" />
-      <div className="font-display text-orvia-dark text-[13px] lg:text-[14px] leading-[1.6] tracking-[0.28px]">
-        <p className="mb-4">{card.body}</p>
-        <p className="font-bold">{card.boldLine}</p>
-      </div>
+      <div className="h-px bg-orvia-dark mb-5" />
+      <p className="font-display text-orvia-dark text-[13px] lg:text-[14px] leading-[1.6] tracking-[0.28px]">
+        {card.body}
+      </p>
     </div>
   );
 }
@@ -54,7 +56,7 @@ export default function RoleCards() {
           Dit is hoe we dat aanpakken.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-x-5 lg:gap-y-0">
           {cards.map((card) => (
             <ServiceCard key={card.id} card={card} />
           ))}
@@ -62,10 +64,10 @@ export default function RoleCards() {
 
         <div className="mt-8 lg:mt-10">
           <Link href="/hoe-we-werken" className="inline-flex items-center group">
-            <span className="h-12 bg-orvia-dark rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-white group-hover:bg-[#3a3533] transition-colors">
+            <span className="h-12 bg-orvia-dark rounded-full flex items-center pl-6 pr-4 -mr-2 font-display font-bold text-[14px] text-white group-hover:bg-[#5c5956] transition-colors">
               Ontdek hoe we werken
             </span>
-            <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-dark rounded-full flex items-center justify-center text-white group-hover:bg-[#3a3533] transition-colors">
+            <span className="relative z-10 flex-shrink-0 w-12 h-12 bg-orvia-dark rounded-full flex items-center justify-center text-white group-hover:bg-[#5c5956] transition-colors">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M3 13L12 4M12 4H5M12 4V11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>

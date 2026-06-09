@@ -41,7 +41,7 @@ export default function WarForTalent() {
         </div>
 
         {/* Photo */}
-        <div className="relative w-full h-[260px] md:h-[360px] lg:w-[475px] lg:h-[496px] lg:flex-shrink-0 rounded-lg overflow-hidden">
+        <div className="relative w-full max-w-[475px] mx-auto aspect-[475/496] lg:max-w-none lg:w-[475px] lg:aspect-auto lg:h-[496px] lg:flex-shrink-0 rounded-lg overflow-hidden">
           <Image
             src="/images/content-photo.png"
             alt="Orvia in actie"
