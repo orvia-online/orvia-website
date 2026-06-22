@@ -20,7 +20,7 @@ const dimensions = [
       "Drive & ambitie",
       "Coachability",
     ],
-    footnote: "Voor alle medewerkers van Planet Talent",
+    footnote: "Voor alle medewerkers van Planet Talent & Fin Forward",
   },
   {
     id: "ecosystem",
@@ -31,7 +31,7 @@ const dimensions = [
       "Flexibiliteit",
       "Community engagement",
     ],
-    footnote: "Voor alle medewerkers van Planet Talent",
+    footnote: "Voor alle medewerkers van Planet Talent & Fin Forward",
   },
 ];
 
